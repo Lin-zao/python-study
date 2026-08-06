@@ -18,10 +18,18 @@ students = (
 )
 #1. 计算每个学生的总分、各科平均分，然后一并输出出来。
 print("学号\t\t姓名\t\t语文\t\t数学\t\t英语\t\t总分\t\t平均分")
+#方法一:基础
 for s in students:
     total = s[2] + s[3] + s[4]
     avg = total / 3
     print(f"{s[0]}\t{s[1]}\t\t{s[2]}\t\t{s[3]}\t\t{s[4]}\t\t{total}\t\t{avg:.1f}")
+
+print("-----------------------------------------------------")
+#方法二:解包
+for id,name,chinese,math,english in students:
+    total = chinese + math + english
+    avg = total / 3
+    print(f"{id}\t{name}\t\t{chinese}\t\t{math}\t\t{english}\t\t{total}\t\t{avg:.1f}")
 
 #2. 统计各科成绩的最低分、最高分、平均分，并输出。
 chinese_scores = [i[2] for i in students]
