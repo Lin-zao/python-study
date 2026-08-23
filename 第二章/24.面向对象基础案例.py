@@ -124,22 +124,29 @@ class EduManagement:
             print()
 
             choice = input("请输入你的选择:")
-            match choice:
-                case "1":
-                    self.add_student()
-                case "2":
-                    self.update_student()
-                case "3":
-                    self.delete_student()
-                case "4":
-                    self.query_student()
-                case "5":
-                    self.show_all_students()
-                case "6":
-                    print("退出系统")
-                    break
-                case _:
-                    print("无效的选择，请重新输入")
+            try:
+                match choice:
+                    case "1":
+                        self.add_student()
+                    case "2":
+                        self.update_student()
+                    case "3":
+                        self.delete_student()
+                    case "4":
+                        self.query_student()
+                    case "5":
+                        self.show_all_students()
+                    case "6":
+                        print("退出系统")
+                        break
+                    case _:
+                        print("无效的选择，请重新输入")
+            except ValueError:
+                print("输入的数据有问题,请检查,然后重新输入!!")
+                continue
+            except Exception:
+                print("程序运行出错了,请程序选择!")
+                continue
 
 #测试
 if __name__ == "__main__":
